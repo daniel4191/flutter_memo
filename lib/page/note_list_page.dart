@@ -54,9 +54,10 @@ class _NoteListPageState extends State<NoteListPage> {
   The Flutter framework contains two sets of widgets that conform to specific design languages: Material Design widgets implement Google's design language of the same name, and Cupertino widgets implement Apple's iOS Human interface guidelines.[9][14][15][16]
   ''',
           title: 'About Flutter',
+          color: Note.colorBlue,
         ),
-        Note('클래스 101 강의 신청하기'),
-        Note('목요일까지 관리비 납부하기'),
+        Note('클래스 101 강의 신청하기', color: Note.colorRed),
+        Note('목요일까지 관리비 납부하기', color: Note.colorOrange),
         Note(
           '''
   - 🧅 양파 1망
@@ -69,6 +70,7 @@ class _NoteListPageState extends State<NoteListPage> {
   - 🍞 식빵 1개
     ''',
           title: '장보기 목록',
+            color: Note.colorYellow,
         ),
         Note(
           '''
@@ -78,6 +80,7 @@ class _NoteListPageState extends State<NoteListPage> {
   - 애플 개발자 계정
     ''',
           title: '만들어야 할 것들',
+            color: Note.colorLime,
         ),
         Note('목요일 오후 7시 강남역 11번출구'),
         Note('플러터 위젯 공부하기 - CircleAvatar'),
@@ -87,6 +90,7 @@ class _NoteListPageState extends State<NoteListPage> {
 
   Widget _buildCard(Note note){
     return Card(
+      color: note.color,
       child: Padding(
         padding: const EdgeInsets.all(12.0),
         child: Column(
