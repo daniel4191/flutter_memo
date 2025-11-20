@@ -1,0 +1,50 @@
+import 'package:flutter/material.dart';
+
+class NoteEditPage extends StatefulWidget {
+
+  @override
+  State createState() => _NoteEditPageState();
+}
+
+class _NoteEditPageState extends State<NoteEditPage>{
+
+  final titleController = TextEditingController();
+
+  final bodyController = TextEditingController();
+
+  @override
+  Widget build(BuildContext context) {
+    return Scaffold(
+      appBar: AppBar(
+        title: Text("노트 편집"),
+      ),
+      body: SingleChildScrollView(
+        padding: EdgeInsets.symmetric(horizontal: 12, vertical: 16),
+        child: Column(
+          mainAxisSize: MainAxisSize.min,
+          children: [
+            TextField(
+              decoration: InputDecoration(
+                border: OutlineInputBorder(),
+                labelText: "제목 입력",
+              ),
+              maxLines: 1,
+              style: TextStyle(fontSize: 20),
+              controller: titleController,
+            ),
+            SizedBox(height: 8),
+            TextField(
+              decoration: InputDecoration(
+                border: InputBorder.none,
+                hintText: "노트 입력",
+              ),
+              maxLines: null,
+              keyboardType: TextInputType.multiline,
+              controller: bodyController,
+            ),
+          ],
+        ),
+      ),
+    );
+  }
+}
